@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Bluegrass Powder Room Co.</title>
+  <meta name="description" content="Photos of our luxury restroom trailer at weddings and events across Southern Kentucky.">
+  <meta property="og:title" content="Gallery | Bluegrass Powder Room Co.">
+  <meta property="og:description" content="Photos of our luxury restroom trailer at weddings and events across Southern Kentucky.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1D2B4F">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Franklin:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* Enable scroll reveals only when motion is welcome and the browser can run them.
+       If site.js hasn't started within 3 seconds, show everything. */
+    (function (root) {
+      if (window.matchMedia && matchMedia("(prefers-reduced-motion: no-preference)").matches && "IntersectionObserver" in window) {
+        root.classList.add("motion-ok");
+        setTimeout(function () { if (!window.siteRevealReady) root.classList.remove("motion-ok"); }, 3000);
+      }
+    })(document.documentElement);
+  </script>
+  <script src="js/site.js" defer></script>
+</head><body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+        <span class="menu-toggle__label">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li><a class="site-nav__link" href="trailer.html">The Trailer</a></li>
+          <li><a class="site-nav__link" href="pricing.html">Pricing</a></li>
+          <li><a class="site-nav__link" href="gallery.html" aria-current="page">Gallery</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+          <li class="site-nav__item--mobile"><a class="btn btn--primary site-nav__cta" href="contact.html">Check your date</a></li>
+        </ul>
+      </nav>
+      <a class="brand" href="index.html" aria-label="Bluegrass Powder Room Co. home">
+        <span class="brand__line">Bluegrass</span>
+        <span class="brand__line">Powder Room Co.</span>
+      </a>
+      <a class="btn header-cta" href="contact.html">Check your date</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <div class="container">
+        <h1>Gallery</h1>
+        <p class="lead">The trailer at weddings and events across Southern Kentucky.</p>
+      </div>
+    </section>
+    <div class="ticking" aria-hidden="true"></div>
+
+    <section class="section" aria-label="Photos">
+      <div class="container">
+        <figure class="wide-photo" data-reveal>
+          <!-- REPLACE BEFORE LAUNCH: AI-generated stand-in for a real trailer photo. -->
+          <img src="images/hero-trailer-1672.jpg"
+             srcset="images/hero-trailer-960.jpg 960w, images/hero-trailer-1672.jpg 1672w"
+             sizes="100vw" width="1672" height="940"
+             alt="Powder blue restroom trailer with white steps and hydrangea planters, set up beside a white horse fence at sunset" loading="lazy">
+        </figure>
+        <!-- ADD EVENT PHOTOS HERE as they come in, for example:
+        <div class="gallery-grid" style="margin-top:16px">
+          <img src="images/gallery/smith-wedding-1.jpg" alt="Describe the photo" width="800" height="1000" loading="lazy">
+        </div>
+        -->
+      </div>
+    </section>
+
+    <section class="section section--mist" aria-labelledby="more-title">
+      <div class="container empty-state" data-reveal>
+        <h2 id="more-title">Event photos are on the way</h2>
+        <p>We’ll add photos from real weddings and events here. In the meantime, the trailer page walks through what your guests will find inside.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="trailer.html">Explore the trailer</a>
+          <a class="btn btn--outline" href="contact.html">Check your date</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="ticking" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid" data-reveal>
+        <div>
+          <p class="footer-brand">Bluegrass Powder Room Co.</p>
+          <p class="footer-tagline">Luxury restroom trailer rentals for weddings and events across Southern Kentucky.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer-heading">Explore</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trailer.html">The Trailer</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h2 class="footer-heading">Get in touch</h2>
+          <ul class="footer-links">
+            <li><a href="contact.html">Send an inquiry</a></li>
+            <!-- CONTACT DETAILS: add once confirmed by the owner, for example:
+            <li><a href="tel:+1XXXXXXXXXX">(XXX) XXX-XXXX</a></li>
+            <li><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></li>
+            SOCIAL: add only for profiles that exist, for example:
+            <li><a href="https://www.instagram.com/yourhandle">Instagram</a></li>
+            -->
+          </ul>
+          <p class="footer-area">Serving Southern Kentucky</p>
+        </div>
+      </div>
+      <p class="site-footer__base">&copy; 2026 Bluegrass Powder Room Co.</p>
+    </div>
+  </footer>
+</body>
+</html>
