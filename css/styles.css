@@ -484,8 +484,9 @@ a { color: inherit; }
   .hero__content { padding-block: var(--sp-7) var(--sp-8); }
 }
 @media (max-width: 599px) {
-  .hero__media { aspect-ratio: 5 / 4; max-height: none; }
-  .hero__media img { object-position: 50% 62%; }
+  /* Phones show the whole portrait photo at its own proportions (1122 × 1402), uncropped */
+  .hero__media { aspect-ratio: 1122 / 1402; max-height: none; }
+  .hero__media img { object-position: 50% 50%; }
   .hero__title { font-size: clamp(2rem, 1.35rem + 3vw, 2.5rem); line-height: 1.08; max-width: none; }
   .hero__content { padding-block: var(--sp-6) var(--sp-7); }
   .hero__text { margin-top: var(--sp-3); font-size: 1.0625rem; max-width: 36ch; }
