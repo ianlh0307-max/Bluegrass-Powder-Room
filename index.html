@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Franklin:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="preload" as="image" href="images/hero-trailer-1672.jpg" imagesrcset="images/hero-trailer-960.jpg 960w, images/hero-trailer-1672.jpg 1672w" imagesizes="100vw">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 860px) and (orientation: landscape), (min-width: 1280px)" imagesrcset="images/hero-desktop-960.webp 960w, images/hero-desktop-1672.webp 1672w" imagesizes="100vw">
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 859px), (orientation: portrait) and (max-width: 1279px)" imagesrcset="images/hero-mobile-600.webp 600w, images/hero-mobile-1122.webp 1122w" imagesizes="100vw">
   <script>
     /* Enable scroll reveals only when motion is welcome and the browser can run them.
        If site.js hasn't started within 3 seconds, show everything. */
@@ -56,12 +57,17 @@
   <main id="main">
     <section class="hero on-dark" aria-labelledby="hero-title">
       <div class="hero__media">
-        <!-- REPLACE BEFORE LAUNCH: this is an AI-generated stand-in. Swap in a real photo of the trailer
-             using the same filenames (about 16:9, trailer in the right half, open space on the left). -->
-        <img fetchpriority="high" src="images/hero-trailer-1672.jpg"
-             srcset="images/hero-trailer-960.jpg 960w, images/hero-trailer-1672.jpg 1672w"
-             sizes="100vw" width="1672" height="940"
-             alt="Powder blue restroom trailer with white steps and hydrangea planters, set up beside a white horse fence at sunset">
+        <!-- Portrait photo on phones and portrait tablets, wide photo everywhere else.
+             The media query matches the stacked hero layout in styles.css. -->
+        <picture>
+          <source media="(max-width: 859px), (orientation: portrait) and (max-width: 1279px)" type="image/webp" srcset="images/hero-mobile-600.webp 600w, images/hero-mobile-1122.webp 1122w" sizes="100vw">
+          <source media="(max-width: 859px), (orientation: portrait) and (max-width: 1279px)" srcset="images/hero-mobile-600.jpg 600w, images/hero-mobile-1122.jpg 1122w" sizes="100vw">
+          <source type="image/webp" srcset="images/hero-desktop-960.webp 960w, images/hero-desktop-1672.webp 1672w" sizes="100vw">
+          <img fetchpriority="high" src="images/hero-desktop-1672.jpg"
+               srcset="images/hero-desktop-960.jpg 960w, images/hero-desktop-1672.jpg 1672w"
+               sizes="100vw" width="1672" height="940"
+               alt="White restroom trailer with three doors marked with the Bluegrass Powder Room Co. monogram, set on gravel with hydrangea planters at sunset">
+        </picture>
       </div>
       <div class="container hero__content">
         <h1 class="hero__title" id="hero-title">Southern Kentucky’s luxury restroom trailer</h1>
@@ -88,7 +94,7 @@
           <li class="feature" data-reveal>
             <svg class="feature__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 6a3 3 0 0 1 6 0v12.5a6 6 0 1 1-6 0z"/><path d="M16 11v10"/><circle cx="16" cy="23" r="2"/></svg>
             <h3 class="feature__title">Heat and air</h3>
-            <p class="feature__text">Warm in a November barn and cool at a July garden party.</p>
+            <p class="feature__text">Comfortable in cooler weather and on warm summer days.</p>
           </li>
           <li class="feature" data-reveal>
             <svg class="feature__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 9h16v13H3z"/><path d="M19 13h5l4 5v4h-9"/><circle cx="8.5" cy="24" r="2.5"/><circle cx="23.5" cy="24" r="2.5"/></svg>
@@ -112,55 +118,40 @@
       </div>
       <div class="split__body" data-reveal>
         <h2 id="art-title">A gallery wall in every stall</h2>
-        <p>Each stall is hung with original work by Kentucky artists, so stepping inside feels more like a powder room than a rental. Premium bookings choose the art style that suits their day.</p>
+        <p>Each stall is hung with original work by Kentucky artists, so stepping inside feels more like a powder room than a rental. You can choose Kentucky-themed art for your stalls, or art personalized for your event.</p>
         <a class="text-link" href="trailer.html">Explore the trailer</a>
       </div>
     </section>
 
     <section class="section section--mist" aria-labelledby="pricing-title">
       <div class="container">
-        <div class="section-head" data-reveal>
-          <h2 id="pricing-title">Simple pricing</h2>
-          <p>Delivery, setup and pickup are included in every package.</p>
-        </div>
-        <div class="plans" data-reveal-group>
-          <article class="plan" data-reveal aria-labelledby="plan-standard">
-            <h3 class="plan__name" id="plan-standard">Standard</h3>
-            <p class="plan__price">$1,000</p>
-            <p class="plan__terms">Up to 8 hours</p>
-            <ul class="plan__list">
-              <li>Delivery, setup and pickup</li>
-              <li>Heat and air</li>
-              <li>Original Kentucky art in every stall</li>
-              <li>Cleaned and stocked before your event</li>
+        <div class="rental" data-reveal-group>
+          <div class="rental__intro" data-reveal>
+            <h2 id="pricing-title">A rental, tailored to your event</h2>
+            <p class="rental__price">
+              <span class="rental__price-label">One-day rentals starting at</span>
+              <span class="rental__price-amount">$1,000</span>
+            </p>
+            <p class="rental__text">Options include your choice of Kentucky-themed art in each stall, fresh flowers inside and out, personalized art for your event, and more. Contact us for a formal quote.</p>
+          </div>
+          <div class="rental__options" data-reveal>
+            <ul class="rental-options">
+              <li class="rental-option">
+                <h3 class="rental-option__name">Kentucky-themed art</h3>
+                <p>Your choice of Kentucky-themed art in each stall.</p>
+              </li>
+              <li class="rental-option">
+                <h3 class="rental-option__name">Fresh flowers</h3>
+                <p>Fresh flowers inside and outside the trailer.</p>
+              </li>
+              <li class="rental-option">
+                <h3 class="rental-option__name">Personalized art</h3>
+                <p>Art personalized for your event.</p>
+              </li>
             </ul>
-            <p class="plan__cta"><a class="btn btn--outline" href="contact.html?package=standard">Ask about Standard</a></p>
-          </article>
-          <article class="plan" data-reveal aria-labelledby="plan-premium">
-            <h3 class="plan__name" id="plan-premium">Premium</h3>
-            <p class="plan__price">$1,200</p>
-            <p class="plan__terms">Up to 8 hours</p>
-            <ul class="plan__list">
-              <li>Everything in Standard</li>
-              <li>Fresh flowers inside and out</li>
-              <li>Your choice of art style in the stalls</li>
-            </ul>
-            <p class="plan__cta"><a class="btn btn--outline" href="contact.html?package=premium">Ask about Premium</a></p>
-          </article>
-          <article class="plan" data-reveal aria-labelledby="plan-weekend">
-            <h3 class="plan__name" id="plan-weekend">Full weekend</h3>
-            <p class="plan__price plan__price--quote">Quoted per event</p>
-            <p class="plan__terms">For celebrations that run all weekend</p>
-            <ul class="plan__list">
-              <li>Everything in Standard</li>
-              <li>The trailer stays on site for the weekend</li>
-            </ul>
-            <p class="plan__cta"><a class="btn btn--outline" href="contact.html?package=weekend">Request a weekend quote</a></p>
-          </article>
-        </div>
-        <div class="plans-note" data-reveal>
-          <p>Extra hours, additional days and venue add-ons are quoted with your booking.</p>
-          <a class="text-link" href="pricing.html">See add-ons and delivery details</a>
+            <p class="rental__more">And more. Ask about anything you have in mind.</p>
+          </div>
+          <p class="rental__cta" data-reveal><a class="btn btn--primary" href="contact.html">Contact us for a formal quote</a></p>
         </div>
       </div>
     </section>
@@ -169,7 +160,7 @@
       <div class="container events" data-reveal-group>
         <div data-reveal>
           <h2 id="events-title">Weddings first, but not only weddings</h2>
-          <p>Any event where guests deserve better than a portable toilet. If you’re hosting it outdoors or in a barn, we can make it more comfortable.</p>
+          <p>Any event where guests deserve better than a portable toilet. Wherever you’re hosting, from an open field to a private estate, we can make it more comfortable.</p>
         </div>
         <ul class="event-list" data-reveal>
           <li>Weddings and rehearsal dinners</li>

@@ -64,11 +64,13 @@
     <section class="section" aria-label="Photos">
       <div class="container">
         <figure class="wide-photo" data-reveal>
-          <!-- REPLACE BEFORE LAUNCH: AI-generated stand-in for a real trailer photo. -->
-          <img src="images/hero-trailer-1672.jpg"
-             srcset="images/hero-trailer-960.jpg 960w, images/hero-trailer-1672.jpg 1672w"
-             sizes="100vw" width="1672" height="940"
-             alt="Powder blue restroom trailer with white steps and hydrangea planters, set up beside a white horse fence at sunset" loading="lazy">
+                    <picture>
+            <source type="image/webp" srcset="images/hero-desktop-960.webp 960w, images/hero-desktop-1672.webp 1672w" sizes="100vw">
+            <img src="images/hero-desktop-1672.jpg"
+               srcset="images/hero-desktop-960.jpg 960w, images/hero-desktop-1672.jpg 1672w"
+               sizes="100vw" width="1672" height="940"
+               alt="White restroom trailer with three doors marked with the Bluegrass Powder Room Co. monogram, set on gravel with hydrangea planters at sunset" loading="lazy">
+          </picture>
         </figure>
         <!-- ADD EVENT PHOTOS HERE as they come in, for example:
         <div class="gallery-grid" style="margin-top:16px">

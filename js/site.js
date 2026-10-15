@@ -61,7 +61,7 @@
   if (root.classList.contains("motion-ok") && "IntersectionObserver" in window) {
     window.siteRevealReady = true;
 
-    // Small stagger between related items (features, plans, detail rows)
+    // Small stagger between related items (features, rental section, detail rows)
     document.querySelectorAll("[data-reveal-group]").forEach(function (group) {
       group.querySelectorAll("[data-reveal]").forEach(function (el, i) {
         el.style.setProperty("--reveal-delay", Math.min(i, 4) * 80 + "ms");
@@ -88,16 +88,8 @@
   var status = form.querySelector(".form-status");
   var submitButton = form.querySelector("[type='submit']");
   var submitLabel = submitButton ? submitButton.textContent : "";
-  var fields = form.querySelectorAll("input:not([type='radio']):not([name='_gotcha']), select, textarea");
+  var fields = form.querySelectorAll("input:not([type='checkbox']):not([name='_gotcha']), select, textarea");
   var attempted = false;
-
-  // Preselect a package when arriving from a pricing link, e.g. contact.html?package=premium
-  var chosen = new URLSearchParams(window.location.search).get("package");
-  if (chosen) {
-    form.querySelectorAll("input[name='package']").forEach(function (radio) {
-      if (radio.value.toLowerCase() === chosen.toLowerCase()) radio.checked = true;
-    });
-  }
 
   // Event dates can't be in the past
   var dateInput = form.querySelector("input[type='date']");
